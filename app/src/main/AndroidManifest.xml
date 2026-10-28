@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Izin lokasi untuk GpsActivity -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Fitur hardware dibuat opsional supaya APK tetap bisa diinstall di semua perangkat -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false" />
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Kalkulator"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Kalkulator">
+
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".HistoryActivity" android:exported="false" />
+        <activity android:name=".AboutActivity" android:exported="false" />
+
+        <!-- Fitur secret calculator -->
+        <activity android:name=".ImageActivity" android:exported="false" />
+        <activity android:name=".AudioActivity" android:exported="false" />
+        <activity android:name=".GpsActivity" android:exported="false" />
+        <activity android:name=".SensorActivity" android:exported="false" />
+
+    </application>
+
+</manifest>
